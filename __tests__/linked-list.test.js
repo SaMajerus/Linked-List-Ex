@@ -21,6 +21,7 @@ describe('LinkedList', () => {
     expect(linkedList.head).toEqual(null);  //If Linked-List is initialized, the 'head' field is 'null'.
   });
 
+  //Tests for 'LinkedList.prototype.insertLast()'--
   test('LinkedList.prototype.insertLast() should add a node at head if a linked list has no head', () => {
     let linkedList = new LinkedList();
     linkedList.insertLast("head");
@@ -32,8 +33,14 @@ describe('LinkedList', () => {
     expect(linkedListWithNodes.head.next.next.next.next.data).toEqual("new last");
   });
 
+  //Tests for 'LinkedList.prototype.remove()'--
   test('it should set a new head if the head is removed', () => {
     linkedListWithNodes.remove(0);
     expect(linkedListWithNodes.head.data).toEqual("node2");
+  });
+
+  test('it should remove a node from the middle', () => {
+    linkedListWithNodes.remove(2);
+    expect(linkedListWithNodes.head.next.next.data).toEqual("node4");
   });
 }); 
