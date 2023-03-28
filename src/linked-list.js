@@ -7,6 +7,15 @@ export default class LinkedList {
 
   insertLast(data) {
     const newNode = new Node(data);
-    this.head = newNode; 
+    if (this.head === null) {
+      this.head = newNode;
+    } else {
+      let currNode = this.head;
+      while (currNode.next != null) {
+        currNode = currNode.next;
+      }
+      currNode.next = newNode;
+    }
   }
+  
 } 
