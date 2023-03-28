@@ -25,6 +25,9 @@ export default class LinkedList {
       let currNode = this.head;
       let currIndex = 0; 
       while ((currIndex+1) <= indexToRemove) {
+        if (currNode.next === null) {   //Essentially a Base case (I think?)
+          return -1; 
+        }
         if ((currIndex+1) === indexToRemove) {
           currNode.next = currNode.next.next;
           break; 
