@@ -17,5 +17,9 @@ export default class LinkedList {
       currNode.next = newNode;
     }
   }
-  
+
+  remove(indexToRemove) {
+    this.head = this.head.next;
+  }
+
 } 
